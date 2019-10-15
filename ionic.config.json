@@ -1,5 +1,7 @@
 {
   "name": "LookBack",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

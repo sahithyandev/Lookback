@@ -24,3 +24,49 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    src: url('./assets/fonts/Poppins-Regular.ttf');
+}
+
+@font-face {
+    font-family: "Poppins-bold";
+    src: url('./assets/fonts/Poppins-Bold.ttf');
+}
+
+@font-face {
+    font-family: "Poppins-semibold";
+    // src: url('./assets/fonts/Poppins-SemiBold.ttf');
+    src: url('./assets/fonts/Poppins-SemiBold.ttf')
+}
+
+* {
+    font-family: 'Poppins', normal, 300;
+}
+
+ion-content {
+    --ion-background-color: #F8F8F8;
+}
+
+a {
+    color: rgb(65, 19, 231);
+    text-decoration: none;
+    font-family: 'Poppins-semibold' !important;
+
+    &:visited,
+    &:active {
+        color: rgb(65, 19, 231);
+        text-decoration: none;
+    }
+}
+
+body {
+    -webkit-user-select: text;
+    user-select: text;
+}
+
+* ::-webkit-scrollbar {
+    display: none;
+}

@@ -1,14 +1,85 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
+<div id="header">
+  <span id="heading">Lookback</span>
+  <ion-icon name="settings"></ion-icon>
+
+  <div id="heading-container" align="center">
+    <span class="sub-heading selected" id="events" (click)="subHeadingClicked($event)">Events</span>
+    <span class="sub-heading" id="born" (click)="subHeadingClicked($event)">Born</span>
+    <span class="sub-heading" id="died" (click)="subHeadingClicked($event)">Died</span>
+  </div>
+</div>
 </ion-header>
 
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+<ion-content class="ion-padding">
+
+  
+  <main>
+    <!-- <div id="event-card" *ngIf="selectedEvent">
+      {{ selectedEvent.text }}
+      <div id="year-selected">
+        {{ selectedEvent.year }}
+        <ion-icon name="share" mode="md" (click)="shareEvent(selectedEvent)"></ion-icon>
+      </div>
+      <div [innerHTML]="selectedEvent.html"></div>
+      <div id="tags">
+        <span class="tag" *ngFor="let tag of selectedEvent.tags">
+          {{ tag }}
+        </span>
+      </div>
+    </div> -->
+    <!-- <ion-card id="event-card" *ngIf="selectedEvent" mode="ios">
+      <ion-card-content>
+        {{ selectedEvent.text }}
+        <div id="year-selected">
+          {{ selectedEvent.year }}
+          <ion-icon name="share" mode="md" (click)="shareEvent(selectedEvent)"></ion-icon>
+        </div>
+        <div [innerHTML]="selectedEvent.html"></div>
+        <div id="tags">
+          <span class="tag" *ngFor="let tag of selectedEvent.tags">
+            {{ tag }}
+          </span>
+        </div>
+      </ion-card-content>  
+    </ion-card> -->
+    <div class="section" id="events">
+      <h3 class="section-heading">
+        <ion-datetime pickerFormat="MMM DD" mode="ios" displayFormat="MMM DD" [(ngModel)]="pickedDate" (ionChange)="picked()" readonly></ion-datetime>
+        <!-- <span id="calendar-icon">
+          <ion-icon name="calendar" mode="md" (click)="selectDate()"></ion-icon>
+        </span> -->
+      </h3>
+      <div id="event-list">
+        <div *ngFor="let event of eventsList" class="event" (click)="eventClicked(event)" [class.died]="event.type == 'died'">
+          <!-- <span id="text" align="left">{{ event.text }}</span> -->
+          <span id="text" align="left" [innerHTML]="event.html"></span>
+          <div id="right-container" align="right">
+            <div id="year" align="right">{{ event.year }}</div>
+            <ion-icon name="share" (click)="shareEvent(event)" mode="md" align="center"></ion-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- <div class="section" id="born">
+    <div class="sub-heading">Dead</div>
+    <div id="event-list">
+      <div *ngFor="let event of eventsList" class="event">
+        <span id="name">{{ event.text }}</span>
+        <span id="year">{{ event.year }}</span>
+      </div>
+    </div>
   </div>
+
+  <div class="section" id="dead">
+    <div class="sub-heading">Dead</div>
+    <div id="event-list">
+      <div *ngFor="let event of eventsList" class="event">
+        <span id="text">{{ event.text }}</span>
+        <span id="year">{{ event.year }}</span>
+      </div>
+    </div>
+  </div> -->
 </ion-content>

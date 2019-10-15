@@ -1,1 +1,171 @@
+// @import './../../global.scss';
 
+// @font-face {
+//     font-family: "Poppins Bold";
+//     src: url('./../../assets/fonts/Poppins-Bold.ttf');
+// }
+
+$padding: 10px;
+
+* {
+    color: #1F271B;
+}
+
+ion-content {
+    // --padding-top: 10px;
+    --padding-bottom: 10px;
+    --padding-start: 10px;
+    --padding-end: 10px;
+    --ion-padding-top: 10px;
+    --ion-padding-bottom: 10px;
+    --ion-padding-start: 10px;
+    --ion-padding-end: 10px;
+    // --padding-top: $padding;
+    // --padding-bottom: $padding;
+    // --padding-start: $padding;
+    // --padding-end: $padding;
+    // --ion-padding-top: $padding;
+    // --ion-padding-bottom: $padding;
+    // --ion-padding-start: $padding;
+    // --ion-padding-end: $padding;
+}
+
+#header {
+    position: fixed;
+    background-color: rgb(230, 230, 230);
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-right: 10px;
+    padding-left: 10px;
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: baseline;
+
+    #heading {
+        // font-family: 'Poppins Bold';
+        font-family: 'Poppins-bold';
+        // font-weight: bold;
+        font-size: 30px;
+    }
+
+    ion-icon[name='settings'] {
+        // display: none;
+        margin-top: $padding;
+        margin-right: $padding;
+        float: right;
+        font-size: 28px;
+        display: none;
+        // align-self: stretch;
+    }
+}
+
+ion-datetime {
+    width: fit-content;
+    margin: 0;
+}
+
+.section-heading {
+    font-size: 24px;
+    font-family: 'Poppins-semibold';
+
+    #calendar-icon {
+        float: right;
+    }
+}
+
+main {
+    margin-top: 100px; // 10 * --padding
+}
+
+div#heading-container {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    align-content: flex-end;
+    // position: fixed;
+}
+
+.sub-heading {
+    font-size: 18px;
+    font-family: 'Poppins-semibold';
+    // font-family: 'Poppins SemiBold';
+    // margin-top: 5px;
+    // margin-bottom: 20px;
+    margin-right: 10px;
+    color: rgb(138, 138, 138);
+
+    &.selected {
+        color: rgb(107, 166, 253);
+
+        // &[id='died'] {
+        //     color: rgb(136, 0, 0);
+        // }
+    }
+}
+
+.event {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Poppins', normal;
+    font-weight: 410;
+    font-size: 16px;
+    // border: 1.2px solid #707070;
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    padding: 16px;
+
+    #text {
+        margin-right: 8px;
+        min-width: 75%;
+        max-width: 80%;
+    }
+
+    #right-container {
+        text-align: center;
+
+        ion-icon[name="share"] {
+            font-size: 1.5em;
+            bottom: 0;
+        }
+
+        #year {
+            width: fit-content;
+            min-width: 20%;
+            color: rgb(56, 143, 241);
+            height: fit-content;
+        }
+    }
+}
+
+#event-card {
+    background-color: white;
+    // position: fixed;
+    // margin: auto;
+    // top: 0;
+    // bottom: 0;
+    // right: 0;
+    // left: 0;
+    // font-family: 'Poppins', normal;
+
+    #year-selected {
+        font-family: "Poppins-bold";
+        font-size: 1.6em;
+        margin-bottom: 10px;
+    }
+
+    #tags {
+        display: none;
+        margin-top: 20px;
+
+        .tag {
+            color: rgb(90, 234, 245);
+            border: 1px solid rgb(90, 234, 245);
+            border-radius: 14px;
+            padding: 3px;
+            margin: 3px;
+        }
+    }
+}
